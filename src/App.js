@@ -1,4 +1,6 @@
-import logo from './logo.svg';
+import React from 'react';
+import 'rsuite/dist/rsuite.min.css';
+
 import './App.css';
 import './styles/main.scss'
 
