@@ -18,7 +18,7 @@ export const ProfileProvider=({children})=>{
 
             if(authObj){
 
-                userRef=database.ref(`/profiles/${authObj}`)
+                userRef=database.ref(`/profiles/${authObj.uid}`)
                 userRef.on('value',(snap)=>{
                     const {name,createdAt}=snap.val()
 
@@ -26,7 +26,7 @@ export const ProfileProvider=({children})=>{
                         name,
                         createdAt,
                         uid:authObj.uid,
-                        email: authObj.email
+                        email: authObj.email,
                     }
                     setProfile(data)
                     setIsLoading(false)
@@ -53,9 +53,8 @@ export const ProfileProvider=({children})=>{
     },[])
 
 
-    return <ProfileContext.Provider value={{isLoading , profile}}>
-        {children}
-    </ProfileContext.Provider>
+    return <ProfileContext.Provider value={{isLoading , profile}}>{children}</ProfileContext.Provider>
+
 }
 
 export const useProfile=()=> useContext(ProfileContext)

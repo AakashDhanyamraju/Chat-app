@@ -12,18 +12,11 @@ const PublicRoute = ({children,...routeProps}) => {
     return <Container>
       <Loader center vertical size='md' content="Loading" speed="slow" />
 
-      
+    
     </Container>
   }
 
-    if(profile && !isLoading ){
-        return<Redirect to='/signin' />
-    }
-
-
-
-
-    if(profile){
+    if(profile && !isLoading){
       return<Redirect to='/' />
     }
 
