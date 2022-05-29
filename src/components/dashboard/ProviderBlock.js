@@ -15,12 +15,13 @@ const ProviderBlock = () => {
     })
 
     const updateIsConnected=(providerId,value)=>{
-            setIsConnected(p=>({
-                return{
+            setIsConnected(p=>{
+                return ({
                     ...p,
                     [providerId]: value,
-                }
-            }))
+                })
+                
+            })
     }
 
     const unlink= async (providerId)=>{

@@ -10,6 +10,7 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import { ProfileProvider } from './context/profile.context';
 
 
+
 function App() {
   return (
     <ProfileProvider>
