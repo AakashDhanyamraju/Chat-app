@@ -3,7 +3,7 @@ import { Alert, Button, Modal } from 'rsuite'
 import AvatarEditor from 'react-avatar-editor'
 import { useModelState } from '../../misc/custom-hooks'
 import { database, storage } from '../../misc/firebase'
-import ProfileAvatar from './ProfileAvatar'
+import ProfileAvatar from '../ProfileAvatar'
 import { useProfile } from '../../context/profile.context'
 import '../../styles/utility.scss'
 
