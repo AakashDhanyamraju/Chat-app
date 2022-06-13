@@ -1,6 +1,6 @@
 import React from 'react'
 import TimeAgo from 'timeago-react'
-import { ProfileProvider } from '../../context/profile.context'
+
 import ProfileAvatar from '../ProfileAvatar'
 
 const RoomItem = ({room}) => {
