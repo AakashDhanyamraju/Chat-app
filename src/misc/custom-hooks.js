@@ -18,7 +18,6 @@ export function useModelState(defaultValue=false){
       },
       []
     )
-    
     return {isOpen,open,close}
 
 }
