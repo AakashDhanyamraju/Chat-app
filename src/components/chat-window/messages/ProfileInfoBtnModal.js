@@ -4,7 +4,7 @@ import { useModelState } from '../../../misc/custom-hooks'
 import ProfileAvatar from '../../ProfileAvatar'
 
 
-const ProfileInfoBtnModal = ({profile}) => {
+const ProfileInfoBtnModal = ({profile,children,...btnProps}) => {
     const {isOpen, close, open} = useModelState()
     const {name,avatar,createdAt}= profile
     const memberSince = new Date(createdAt).toLocaleDateString()
@@ -13,7 +13,7 @@ const ProfileInfoBtnModal = ({profile}) => {
 
   return (
     <div>
-        <Button className='ml-2' onClick={open} >
+        <Button {...btnProps} className='ml-2' onClick={open} >
             {shortName}
         </Button>
         <Modal show = {isOpen} onHide={close} >
@@ -28,6 +28,7 @@ const ProfileInfoBtnModal = ({profile}) => {
                 <p>Member since {memberSince}</p>
             </Modal.Body>
             <Modal.Footer>
+                {children}
                 <Button block onClick={close} >
                     Close
                 </Button>
